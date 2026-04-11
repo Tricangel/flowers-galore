@@ -1,15 +1,23 @@
 package bee.flowers.block;
 
+import bee.flowers.Flowersgalore;
 import bee.flowers.block.property.ColourProperty;
 import bee.flowers.block.property.ShapeProperty;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
+import bee.flowers.registry.FlowersGaloreBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.ChatType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.OutgoingChatMessage;
+import net.minecraft.network.chat.PlayerChatMessage;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
@@ -45,32 +53,34 @@ public class BreedableFlower extends VegetationBlock implements SuspiciousEffect
     @Override
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 
-        if (itemStack.is(Items.BONE_MEAL)) {
-            breed(level, pos);
-            itemStack.consume(1, player);
-            return InteractionResult.SUCCESS;
+        if (itemStack.is(Items.BONE_MEAL) && !level.isClientSide()) {
+            if (breed(level, pos)) {
+                itemStack.consume(1, player);
+                return InteractionResult.SUCCESS;
+            }
 
         }
 
         return super.useItemOn(itemStack, state, level, pos, player, hand, hitResult);
     }
 
-    public void breed(Level level, BlockPos origin) {
+    public boolean breed(Level level, BlockPos origin) {
         BlockState originState =  level.getBlockState(origin);
+        BlockState mutatedState = null;
 
 
-        for (int i = 0; i < 4; i++) {
-            BlockPos pos = origin.relative(Direction.getRandom(RandomSource.create()));
-            BlockState state = level.getBlockState(pos);
-            if (state.isAir() && this.canSurvive(originState, level, pos)) {
-                BlockState mutatedState = mutate(originState);
-                level.setBlock(pos, mutatedState, 0);
-                break;
+        for (int i = -1; i < 1; i++) {
+            for (int j = -1; j < 1; j++) {
+                BlockPos pos = origin.north(i).east(j);
+                BlockState state = level.getBlockState(pos);
+                if (state.isAir() && this.canSurvive(originState, level, pos)) {
+                    mutatedState = mutate(originState);
+                    level.setBlock(pos, mutatedState, 0);
+                    return true;
+                }
             }
         }
-
-
-
+        return false;
     }
 
     public static BlockState mutate(BlockState origin) {
@@ -88,6 +98,7 @@ public class BreedableFlower extends VegetationBlock implements SuspiciousEffect
         return origin.setValue(COLOUR, colour).setValue(SHAPE, shape);
 
     }
+
 
     public BreedableFlower(Properties properties) {
         super(properties);

@@ -6,16 +6,20 @@ import java.util.Random;
 
 public enum ShapeProperty implements StringRepresentable {
     DEFAULT("default"),
-    POINTY("pointy");
+    POINTY("pointy"),
+    WOAH("woah"),
+    MANY("many");
 
     private final String name;
 
     public static ShapeProperty getRandomShape() {
-        int random = new Random().nextInt(1, 2);
+        int random = new Random().nextInt(1, 4);
 
         switch (random) {
             case 1 -> {return ShapeProperty.DEFAULT;}
             case 2 -> {return ShapeProperty.POINTY;}
+            case 3 -> {return ShapeProperty.WOAH;}
+            case 4 -> {return ShapeProperty.MANY;}
 
         }
         return ShapeProperty.DEFAULT;

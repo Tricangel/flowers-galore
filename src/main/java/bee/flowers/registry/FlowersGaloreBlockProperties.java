@@ -2,6 +2,7 @@ package bee.flowers.registry;
 
 import bee.flowers.block.property.ColourProperty;
 import bee.flowers.block.property.ShapeProperty;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public class FlowersGaloreBlockProperties {

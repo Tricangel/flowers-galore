@@ -19,6 +19,8 @@ public class FlowersGaloreBlocks {
 
     public static final Block flower = register("flower", BreedableFlower::new , BlockBehaviour.Properties.of().noCollision(), true);
 
+    public static final Block ALLIUM = register("allium", BreedableFlower::new , BlockBehaviour.Properties.of().noCollision(), true);
+
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         ResourceKey<Block> blockKey = keyOfBlock(name);
