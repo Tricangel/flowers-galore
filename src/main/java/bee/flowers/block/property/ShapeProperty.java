@@ -8,7 +8,7 @@ public enum ShapeProperty implements StringRepresentable {
     DEFAULT("default"),
     POINTY("pointy"),
     WOAH("woah"),
-    MANY("many");
+    ANOTHERONE("anotherone");
 
     private final String name;
 
@@ -19,7 +19,7 @@ public enum ShapeProperty implements StringRepresentable {
             case 1 -> {return ShapeProperty.DEFAULT;}
             case 2 -> {return ShapeProperty.POINTY;}
             case 3 -> {return ShapeProperty.WOAH;}
-            case 4 -> {return ShapeProperty.MANY;}
+            case 4 -> {return ShapeProperty.ANOTHERONE;}
 
         }
         return ShapeProperty.DEFAULT;

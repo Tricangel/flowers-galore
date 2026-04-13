@@ -1,6 +1,7 @@
 package bee.flowers.registry;
 
 import bee.flowers.Flowersgalore;
+import bee.flowers.block.AlliumFlowerBlock;
 import bee.flowers.block.BreedableFlower;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -11,15 +12,15 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
 
 public class FlowersGaloreBlocks {
 
-    public static final Block flower = register("flower", BreedableFlower::new , BlockBehaviour.Properties.of().noCollision(), true);
-
-    public static final Block ALLIUM = register("allium", BreedableFlower::new , BlockBehaviour.Properties.of().noCollision(), true);
+    public static final Block ALLIUM = register("allium", instance -> new AlliumFlowerBlock(SuspiciousStewEffects.EMPTY, instance) , BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_TULIP), true);
 
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {

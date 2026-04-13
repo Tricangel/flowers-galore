@@ -23,8 +23,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SuspiciousEffectHolder;
 import net.minecraft.world.level.block.VegetationBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -33,22 +35,13 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.Random;
 
-public class BreedableFlower extends VegetationBlock implements SuspiciousEffectHolder {
-    private static final EnumProperty<ShapeProperty> SHAPE = FlowersGaloreBlockProperties.FLOWER_SHAPE;
-    public static final EnumProperty<ColourProperty> COLOUR = FlowersGaloreBlockProperties.COLOUR;
+public abstract class BreedableFlower extends FlowerBlock {
     private SuspiciousStewEffects suspiciousStewEffects = null;
 
-    public BreedableFlower(Properties properties, SuspiciousStewEffects suspiciousStewEffects) {
-        super(properties);
-        this.suspiciousStewEffects = suspiciousStewEffects;
+    public BreedableFlower(SuspiciousStewEffects suspiciousStewEffects, Properties properties) {
+        super(suspiciousStewEffects, properties);
     }
 
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(SHAPE);
-        builder.add(COLOUR);
-    }
 
     @Override
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
@@ -83,31 +76,9 @@ public class BreedableFlower extends VegetationBlock implements SuspiciousEffect
         return false;
     }
 
-    public static BlockState mutate(BlockState origin) {
-        ColourProperty colour = origin.getValue(FlowersGaloreBlockProperties.COLOUR);
-        ShapeProperty shape = origin.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE);
-        Random random = new Random();
-        if (random.nextInt(0, 10) == 0) {
-            colour = ColourProperty.getRandomColour();
-        }
-
-        if (random.nextInt(0, 10) == 0) {
-            shape = ShapeProperty.getRandomShape();
-        }
-
-        return origin.setValue(COLOUR, colour).setValue(SHAPE, shape);
-
-    }
+    public abstract BlockState mutate(BlockState origin);
 
 
-    public BreedableFlower(Properties properties) {
-        super(properties);
-    }
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
-    }
 
     @Override
     public SuspiciousStewEffects getSuspiciousEffects() {

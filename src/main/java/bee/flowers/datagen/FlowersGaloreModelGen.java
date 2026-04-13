@@ -13,7 +13,6 @@ public class FlowersGaloreModelGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createCrossBlock(FlowersGaloreBlocks.flower, BlockModelGenerators.PlantType.TINTED);
     }
 
     @Override

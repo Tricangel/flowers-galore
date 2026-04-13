@@ -1,6 +1,9 @@
 {
   "variants": {
     "flower_shape=default": {
+      "model": "flowers-galore:block/allium/allium_0"
+    },
+    "flower_shape=anotherone": {
       "model": "flowers-galore:block/allium/allium_1"
     },
     "flower_shape=pointy": {
@@ -8,9 +11,6 @@
     },
     "flower_shape=woah": {
       "model": "flowers-galore:block/allium/allium_3"
-    },
-    "flower_shape=many": {
-      "model": "flowers-galore:block/allium/allium_4"
     }
   }
 }

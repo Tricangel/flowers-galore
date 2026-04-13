@@ -1,5 +1,6 @@
 package bee.flowers;
 
+import bee.flowers.block.property.AlliumColourProperty;
 import bee.flowers.block.property.ColourProperty;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreBlocks;
@@ -19,12 +20,12 @@ public class FlowersgaloreClient implements ClientModInitializer {
         BlockColorRegistry.register(List.of(new BlockTintSource() {
             @Override
             public int color(BlockState state) {
-                    ColourProperty colourProperty = state.getValue(FlowersGaloreBlockProperties.COLOUR);
+                    AlliumColourProperty colourProperty = state.getValue(FlowersGaloreBlockProperties.ALLIUM_COLOURS);
                     return colourProperty.getColour();
             }
 
         }
-    ), FlowersGaloreBlocks.flower, FlowersGaloreBlocks.ALLIUM);
+    ), FlowersGaloreBlocks.ALLIUM);
 
     }
 }

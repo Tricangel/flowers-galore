@@ -11,25 +11,22 @@ import java.util.Map;
 import java.util.Random;
 
 public enum ColourProperty implements StringRepresentable {
-    WHITE("white", 15790320),
-    ORANGE("orange", 15435844),
-    MAGENTA("magenta", 12801229),
-    LIGHT_BLUE("light_blue", 6719955),
-    YELLOW("yellow", 14602026),
-    LIME("lime", 4312372),
-    PINK("pink", 14188952),
-    CYAN("cyan", 2651799),
-    PURPLE("purple", 8073150),
-    BLUE("blue", 2437522),
-    GREEN("green", 3887386),
-    RED("red", 11743532),
-    BLACK("black", 1973019);
+    WHITE("white", 14084328),
+    ORANGE("orange", 12413474),
+    MAGENTA("magenta", 16739839),
+    LIGHT_BLUE("light_blue", 3133181),
+    YELLOW("yellow", 16772175),
+    PINK("pink", 12949486),
+    PURPLE("purple", 12938751),
+    BLUE("blue", 4614891),
+    RED("red", 15544364),
+    BLACK("black", 2631720);
 
     private final String name;
     private final int colour;
 
     public static ColourProperty getRandomColour() {
-        int random = new Random().nextInt(1, 4);
+        int random = new Random().nextInt(1, 10);
 
         switch (random) {
             case 1 -> {return ColourProperty.WHITE;}
@@ -37,19 +34,16 @@ public enum ColourProperty implements StringRepresentable {
             case 3 -> {return ColourProperty.MAGENTA;}
             case 4 -> {return ColourProperty.LIGHT_BLUE;}
             case 5 -> {return ColourProperty.YELLOW;}
-            case 6 -> {return ColourProperty.LIME;}
-            case 7 -> {return ColourProperty.PINK;}
-            case 8 -> {return ColourProperty.CYAN;}
-            case 9 -> {return ColourProperty.PURPLE;}
-            case 10 -> {return ColourProperty.BLUE;}
-            case 11 -> {return ColourProperty.GREEN;}
-            case 12 -> {return ColourProperty.RED;}
-            case 13 -> {return ColourProperty.BLACK;}
+            case 6 -> {return ColourProperty.PINK;}
+            case 7 -> {return ColourProperty.PURPLE;}
+            case 8 -> {return ColourProperty.BLUE;}
+            case 9 -> {return ColourProperty.RED;}
+            case 10 -> {return ColourProperty.BLACK;}
 
 
 
         }
-        return ColourProperty.GREEN;
+        return ColourProperty.WHITE;
     }
 
     ColourProperty(String name, int colour) {
