@@ -1,8 +1,8 @@
 package bee.flowers.registry;
 
 import bee.flowers.Flowersgalore;
-import bee.flowers.block.AlliumFlowerBlock;
-import bee.flowers.block.BreedableFlower;
+import bee.flowers.block.TallBreedableFlower;
+import bee.flowers.block.VaseBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -20,7 +20,11 @@ import java.util.function.Function;
 
 public class FlowersGaloreBlocks {
 
-    public static final Block ALLIUM = register("allium", instance -> new AlliumFlowerBlock(SuspiciousStewEffects.EMPTY, instance) , BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_TULIP), true);
+    public static final Block ALLIUM = register("allium", instance -> new FlowerBlock(SuspiciousStewEffects.EMPTY, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_TULIP), true);
+
+    public static final Block ROSE_BUSH = register("rose_bush", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.ROSE_BUSH), true);
+
+    public static final Block VASE = register("base", VaseBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT), true);
 
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
@@ -43,6 +47,7 @@ public class FlowersGaloreBlocks {
         return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Flowersgalore.MOD_ID, name));
     }
 
-    public static void init(){}
+    public static void init() {
+    }
 
 }

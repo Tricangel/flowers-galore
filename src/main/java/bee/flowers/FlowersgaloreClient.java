@@ -1,14 +1,22 @@
 package bee.flowers;
 
-import bee.flowers.block.property.AlliumColourProperty;
+import bee.flowers.block.entity.VaseBlockRenderer;
 import bee.flowers.block.property.ColourProperty;
+import bee.flowers.item.RoseColourTintSource;
+import bee.flowers.registry.FlowersGaloreBlockEntities;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreBlocks;
+import bee.flowers.registry.FlowersGaloreItemComponents;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockTintSource;
-import net.minecraft.util.CommonColors;
-import net.minecraft.world.item.DyeColor;
+import net.minecraft.client.color.item.ItemTintSources;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
@@ -17,15 +25,31 @@ public class FlowersgaloreClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        BlockColorRegistry.register(List.of(new BlockTintSource() {
-            @Override
-            public int color(BlockState state) {
-                    AlliumColourProperty colourProperty = state.getValue(FlowersGaloreBlockProperties.ALLIUM_COLOURS);
-                    return colourProperty.getColour();
+        BlockEntityRenderers.register(FlowersGaloreBlockEntities.VASE_BLOCK_ENTITY, VaseBlockRenderer::new);
+
+        ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipFlag, list) -> {
+            if (itemStack.get(FlowersGaloreItemComponents.FLOWER_COLOUR) == null) return;
+            LocalPlayer player = Minecraft.getInstance().player;
+            if (player == null) return;
+            if (player.isShiftKeyDown()) {
+                list.add(Component.literal(ColourProperty.fromColour(itemStack.get(FlowersGaloreItemComponents.FLOWER_COLOUR)).getSerializedName()));
             }
 
-        }
-    ), FlowersGaloreBlocks.ALLIUM);
+        }));
+
+        ItemTintSources.ID_MAPPER.put(Identifier.fromNamespaceAndPath(Flowersgalore.MOD_ID, "color"), RoseColourTintSource.MAP_CODEC);
+
+
+
+        BlockColorRegistry.register(List.of(new BlockTintSource() {
+                                                @Override
+                                                public int color(BlockState state) {
+                                                    ColourProperty colourProperty = state.getValue(FlowersGaloreBlockProperties.COLOUR);
+                                                    return colourProperty.getColour();
+                                                }
+
+                                            }
+        ), FlowersGaloreBlocks.ROSE_BUSH);
 
     }
 }

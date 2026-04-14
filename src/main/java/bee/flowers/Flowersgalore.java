@@ -1,9 +1,21 @@
 package bee.flowers;
 
+import bee.flowers.block.TallBreedableFlower;
 import bee.flowers.block.property.ColourProperty;
-import bee.flowers.registry.FlowersGaloreBlocks;
+import bee.flowers.registry.*;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.player.ItemEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.Containers;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.state.BlockState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,38 +24,36 @@ import java.util.Map;
 import java.util.Random;
 
 public class Flowersgalore implements ModInitializer {
-	public static final String MOD_ID = "flowers-galore";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
-	@Override
-	public void onInitialize() {
-		FlowersGaloreBlocks.init();
-	}
+    public static final String MOD_ID = "flowers-galore";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 
-	public static DyeColor getRandomColour() {
-		int random = new Random().nextInt(1, 8);
+    @Override
+    public void onInitialize() {
+        FlowersGaloreBlocks.init();
+        FlowersGaloreItems.init();
+        FlowersGaloreItemComponents.init();
+        FlowersGaloreBlockEntities.init();
 
-		switch (random) {
-			case 1 -> {return DyeColor.BLUE;}
-			case 2 -> {return DyeColor.PURPLE;}
-			case 3 -> {return DyeColor.MAGENTA;}
-			case 4 -> {return DyeColor.PINK;}
-			case 5 -> {return DyeColor.YELLOW;}
-			case 6 -> {return DyeColor.ORANGE;}
-			case 7 -> {return DyeColor.RED;}
-			case 8 -> {return DyeColor.GREEN;}
-			case 9 -> {return DyeColor.BLACK;}
-			case 10 -> {return DyeColor.BROWN;}
-			case 11 -> {return DyeColor.LIGHT_BLUE;}
-			case 12 -> {return DyeColor.LIME;}
-			case 13 -> {return DyeColor.CYAN;}
-			case 14 -> {return DyeColor.LIGHT_GRAY;}
-			case 15 -> {return DyeColor.GRAY;}
-			case 16 -> {return DyeColor.WHITE;}
+        UseBlockCallback.EVENT.register(((player, level, hand, hitResult) -> {
+            BlockPos pos = hitResult.getBlockPos();
+            ItemStack stack = player.getItemInHand(hand);
+            BlockState state = level.getBlockState(pos);
 
-		}
-		return DyeColor.GREEN;
-	}
+            if (!(stack.is(Items.SHEARS) && state.getBlock() instanceof TallBreedableFlower)) {
+                return InteractionResult.PASS;
+            }
+
+            ItemStack rose = new ItemStack(FlowersGaloreItems.ROSE_CUTTING);
+
+            rose.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
+            Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), rose);
+            player.playSound(SoundEvents.SHEARS_SNIP);
+            stack.hurtAndBreak(25, player, hand);
+            return InteractionResult.SUCCESS;
+
+        }));
+
+    }
 
 }

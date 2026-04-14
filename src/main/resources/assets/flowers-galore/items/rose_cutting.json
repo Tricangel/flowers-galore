@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "flowers-galore:item/rose_cutting",
+    "tints": [
+      {
+        "type": "flowers-galore:color",
+        "color": 0
+      }
+    ]
+  }
+}

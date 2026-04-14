@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flowers-galore:block/rose/rose_bush_top_flowers",
+    "layer1": "flowers-galore:block/rose/rose_bush_top_stem"
+  }
+}

@@ -35,49 +35,12 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.Random;
 
-public abstract class BreedableFlower extends FlowerBlock {
+public class BreedableFlower extends FlowerBlock {
     private SuspiciousStewEffects suspiciousStewEffects = null;
 
     public BreedableFlower(SuspiciousStewEffects suspiciousStewEffects, Properties properties) {
         super(suspiciousStewEffects, properties);
     }
-
-
-    @Override
-    protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-
-        if (itemStack.is(Items.BONE_MEAL) && !level.isClientSide()) {
-            if (breed(level, pos)) {
-                itemStack.consume(1, player);
-                return InteractionResult.SUCCESS;
-            }
-
-        }
-
-        return super.useItemOn(itemStack, state, level, pos, player, hand, hitResult);
-    }
-
-    public boolean breed(Level level, BlockPos origin) {
-        BlockState originState =  level.getBlockState(origin);
-        BlockState mutatedState = null;
-
-
-        for (int i = -1; i < 1; i++) {
-            for (int j = -1; j < 1; j++) {
-                BlockPos pos = origin.north(i).east(j);
-                BlockState state = level.getBlockState(pos);
-                if (state.isAir() && this.canSurvive(originState, level, pos)) {
-                    mutatedState = mutate(originState);
-                    level.setBlock(pos, mutatedState, 0);
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public abstract BlockState mutate(BlockState origin);
-
 
 
     @Override

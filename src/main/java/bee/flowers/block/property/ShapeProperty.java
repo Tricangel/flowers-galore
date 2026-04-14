@@ -16,10 +16,18 @@ public enum ShapeProperty implements StringRepresentable {
         int random = new Random().nextInt(1, 4);
 
         switch (random) {
-            case 1 -> {return ShapeProperty.DEFAULT;}
-            case 2 -> {return ShapeProperty.POINTY;}
-            case 3 -> {return ShapeProperty.WOAH;}
-            case 4 -> {return ShapeProperty.ANOTHERONE;}
+            case 1 -> {
+                return ShapeProperty.DEFAULT;
+            }
+            case 2 -> {
+                return ShapeProperty.POINTY;
+            }
+            case 3 -> {
+                return ShapeProperty.WOAH;
+            }
+            case 4 -> {
+                return ShapeProperty.ANOTHERONE;
+            }
 
         }
         return ShapeProperty.DEFAULT;
