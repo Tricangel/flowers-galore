@@ -24,7 +24,7 @@ public class FlowersGaloreBlocks {
 
     public static final Block ROSE_BUSH = register("rose_bush", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.ROSE_BUSH), true);
 
-    public static final Block VASE = register("base", VaseBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT), true);
+    public static final Block VASE = register("vase", VaseBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT), true);
 
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {

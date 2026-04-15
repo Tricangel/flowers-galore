@@ -9,6 +9,8 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
@@ -45,11 +47,15 @@ public class Flowersgalore implements ModInitializer {
             }
 
             ItemStack rose = new ItemStack(FlowersGaloreItems.ROSE_CUTTING);
+            Component itemName = rose.getItem().getName(rose);
+            Component colour = state.getValue(FlowersGaloreBlockProperties.COLOUR).getDisplayName();
 
+            rose.set(DataComponents.ITEM_NAME, Component.literal(colour.getString() + " " + itemName.getString()));
             rose.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
             Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), rose);
             player.playSound(SoundEvents.SHEARS_SNIP);
             stack.hurtAndBreak(25, player, hand);
+
             return InteractionResult.SUCCESS;
 
         }));

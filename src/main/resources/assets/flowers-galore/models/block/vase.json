@@ -1,0 +1,89 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [8, 8],
+	"textures": {
+		"1": "flowers-galore:block/vase_body",
+		"2": "flowers-galore:block/vase_top",
+		"3": "flowers-galore:block/vase_neck",
+		"particle": "flowers-galore:block/vase_body"
+	},
+	"elements": [
+		{
+			"from": [4, 0, 4],
+			"to": [12, 10, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 4]},
+			"faces": {
+				"north": {"uv": [0, 0, 4, 5.5], "texture": "#1"},
+				"east": {"uv": [4, 0, 8, 5.5], "texture": "#1"},
+				"south": {"uv": [0, 5.5, 4, 11], "texture": "#1"},
+				"west": {"uv": [4, 5.5, 8, 11], "texture": "#1"},
+				"up": {"uv": [12, 4, 8, 0], "texture": "#1"},
+				"down": {"uv": [12, 4, 8, 8], "texture": "#1"}
+			}
+		},
+		{
+			"from": [4, 10, 8],
+			"to": [8, 11, 12],
+			"rotation": {"x": 0, "y": 90, "z": 0, "origin": [6, 10, 8]},
+			"faces": {
+				"north": {"uv": [8, 0, 16, 2], "texture": "#3"},
+				"east": {"uv": [8, 2, 16, 4], "texture": "#3"},
+				"south": {"uv": [8, 4, 16, 6], "texture": "#3"},
+				"west": {"uv": [8, 6, 16, 8], "texture": "#3"},
+				"up": {"uv": [8, 8, 0, 0], "texture": "#3"},
+				"down": {"uv": [8, 8, 0, 16], "texture": "#3"}
+			}
+		},
+		{
+			"from": [5, 11, 5],
+			"to": [11, 12, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 11, 8]},
+			"faces": {
+				"north": {"uv": [8, 0, 16, 1], "texture": "#2"},
+				"east": {"uv": [8, 1, 16, 2], "texture": "#2"},
+				"south": {"uv": [8, 2, 16, 3], "texture": "#2"},
+				"west": {"uv": [8, 3, 16, 4], "texture": "#2"},
+				"up": {"uv": [8, 8, 0, 0], "texture": "#2"},
+				"down": {"uv": [8, 8, 0, 16], "texture": "#2"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 0, -1.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 0, -1.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"ground": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.8, 0.8, 0.8]
+		}
+	},
+	"groups": [
+		{
+			"name": "Body",
+			"origin": [4, 0, 4],
+			"scope": 0,
+			"color": 0,
+			"children": [0]
+		},
+		{
+			"name": "Neck",
+			"origin": [5, 12, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [1]
+		},
+		{
+			"name": "Top",
+			"origin": [8, 11, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [2]
+		}
+	]
+}

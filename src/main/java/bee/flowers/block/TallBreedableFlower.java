@@ -64,9 +64,14 @@ public class TallBreedableFlower extends TallFlowerBlock {
         Level level = context.getLevel();
 
         if (pos.getY() < level.getMaxY() && level.getBlockState(pos.above()).canBeReplaced(context)) {
+            BlockState state = this.defaultBlockState();
             if (stack.get(FlowersGaloreItemComponents.FLOWER_COLOUR) != null) {
-                return this.defaultBlockState().setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.fromColour(stack.get(FlowersGaloreItemComponents.FLOWER_COLOUR)));
-            } else return this.defaultBlockState();
+                state = state.setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.fromColour(stack.get(FlowersGaloreItemComponents.FLOWER_COLOUR)));
+            }
+            if (stack.get(FlowersGaloreItemComponents.FLOWER_SHAPE) != null) {
+                state = state.setValue(FlowersGaloreBlockProperties.FLOWER_SHAPE, ShapeProperty.fromString(stack.get(FlowersGaloreItemComponents.FLOWER_SHAPE)));
+            }
+            return state;
         } else return null;
     }
 
@@ -77,6 +82,7 @@ public class TallBreedableFlower extends TallFlowerBlock {
             Component name = this.getName(state);
             stack.set(DataComponents.ITEM_NAME, name);
             stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
+            stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
             return List.of(stack);
         } else return List.of();
     }
@@ -88,6 +94,10 @@ public class TallBreedableFlower extends TallFlowerBlock {
         builder.add(COLOUR);
     }
 
+    @Override
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+        return false;
+    }
 
     @Override
     protected boolean isPathfindable(BlockState state, PathComputationType type) {
@@ -102,6 +112,10 @@ public class TallBreedableFlower extends TallFlowerBlock {
     public Component getName(BlockState state) {
         Component itemName = this.getName();
         Component colour = state.getValue(FlowersGaloreBlockProperties.COLOUR).getDisplayName();
+        if (state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) != ShapeProperty.DEFAULT){
+            Component shape = state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getDisplayName();
+            return Component.literal(shape.getString() + " " + colour.getString() + " " + itemName.getString());
+        }
         return Component.literal(colour.getString() + " " + itemName.getString());
     }
 

@@ -18,6 +18,12 @@ public class FlowersGaloreItemComponents {
             DataComponentType.<Integer>builder().persistent(Codec.INT).build()
     );
 
+    public static final DataComponentType<String> FLOWER_SHAPE = Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            Identifier.fromNamespaceAndPath(Flowersgalore.MOD_ID, "flower_shape"),
+            DataComponentType.<String>builder().persistent(Codec.STRING).build()
+    );
+
     public static final DataComponentType<BlockState> PREVIOUS_BLOCK = Registry.register(
             BuiltInRegistries.DATA_COMPONENT_TYPE,
             Identifier.fromNamespaceAndPath(Flowersgalore.MOD_ID, "previous_block"),

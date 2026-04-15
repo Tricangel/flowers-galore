@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flowers-galore:item/rose_cutting_in_gui_petals",
+    "layer1": "flowers-galore:item/rose_cutting_in_gui_stalk"
+  }
+}

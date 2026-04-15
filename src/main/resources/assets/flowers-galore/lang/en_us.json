@@ -1,5 +1,9 @@
 {
   "block.flowers-galore.rose_bush": "Rose Bush",
   "item.flowers-galore.rose_cutting": "Rose Cutting",
-  "item.flowers-galore.fertilizer": "Fertilizer"
+  "item.flowers-galore.fertilizer": "Fertilizer",
+  "shape.flowers-galore.default": "Default",
+  "shape.flowers-galore.large_flowers": "Large",
+  "shape.flowers-galore.small_flowers": "Small",
+  "shape.flowers-galore.many_flowers": "Many"
 }

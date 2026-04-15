@@ -27,16 +27,6 @@ public class FlowersgaloreClient implements ClientModInitializer {
 
         BlockEntityRenderers.register(FlowersGaloreBlockEntities.VASE_BLOCK_ENTITY, VaseBlockRenderer::new);
 
-        ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipFlag, list) -> {
-            if (itemStack.get(FlowersGaloreItemComponents.FLOWER_COLOUR) == null) return;
-            LocalPlayer player = Minecraft.getInstance().player;
-            if (player == null) return;
-            if (player.isShiftKeyDown()) {
-                list.add(Component.literal(ColourProperty.fromColour(itemStack.get(FlowersGaloreItemComponents.FLOWER_COLOUR)).getSerializedName()));
-            }
-
-        }));
-
         ItemTintSources.ID_MAPPER.put(Identifier.fromNamespaceAndPath(Flowersgalore.MOD_ID, "color"), RoseColourTintSource.MAP_CODEC);
 
 

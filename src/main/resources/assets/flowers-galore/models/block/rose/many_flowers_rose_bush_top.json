@@ -1,0 +1,8 @@
+{
+  "parent": "flowers-galore:block/tall_flower_template",
+  "textures": {
+    "0": "flowers-galore:block/rose/rose_bush_top_stem",
+    "1": "flowers-galore:block/rose/rose_bush_top_flowers_many",
+    "particle": "flowers-galore:block/rose/rose_bush_top_stem"
+  }
+}

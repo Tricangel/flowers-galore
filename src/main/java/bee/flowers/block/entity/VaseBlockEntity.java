@@ -29,9 +29,11 @@ public class VaseBlockEntity extends BlockEntity implements Clearable {
     }
 
     public boolean addIngredients(ItemStack stack) {
+
         for (int i = 0; i < ingredients.size(); i++) {
             if (ingredients.get(i).isEmpty()) {
-                ingredients.set(i, stack);
+                ingredients.set(i, stack.copy());
+                stack.shrink(1);
                 return true;
             }
         }

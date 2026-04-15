@@ -1,12 +1,34 @@
+
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "flowers-galore:item/rose_cutting",
-    "tints": [
+    "type": "minecraft:select",
+    "cases": [
       {
-        "type": "flowers-galore:color",
-        "color": 0
+        "model": {
+          "type": "minecraft:model",
+          "model": "flowers-galore:item/rose_cutting_in_gui",
+          "tints": [
+            {
+              "type": "flowers-galore:color",
+              "color": 0
+            }
+          ]
+        },
+        "when": [
+          "gui"
+        ]
       }
-    ]
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "flowers-galore:item/rose_cutting",
+      "tints": [
+        {
+          "type": "flowers-galore:color",
+          "color": 0
+        }
+      ]
+    },
+    "property": "minecraft:display_context"
   }
 }

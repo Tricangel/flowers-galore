@@ -53,22 +53,22 @@ public class VaseBlockRenderer implements BlockEntityRenderer<VaseBlockEntity, V
         List<ItemStackRenderState> items = state.ingredients;
         for (int i = 0; i < items.size(); i++) {
             poseStack.pushPose();
-            poseStack.translate(.5, 1, .5);
+            poseStack.translate(.5, .9, .5);
             if (i == 0) {
-                poseStack.mulPose(Axis.XP.rotation(-100));
-                poseStack.mulPose(Axis.YP.rotation(15));
+                poseStack.mulPose(Axis.XP.rotation(.5f));
+                poseStack.translate(0, 0, .1);
             }
             if (i == 1) {
-                poseStack.mulPose(Axis.ZP.rotation(15));
-                poseStack.mulPose(Axis.YP.rotation(-20));
+                poseStack.mulPose(Axis.XP.rotation(-.5f));
+                poseStack.translate(0, 0, -.1);
             }
             if (i == 2) {
-                poseStack.mulPose(Axis.XP.rotation(20));
-                poseStack.mulPose(Axis.YP.rotation(-15));
+                poseStack.mulPose(Axis.ZP.rotation(.5f));
+                poseStack.translate(-.1, 0, 0);
             }
             if (i == 3) {
-                poseStack.mulPose(Axis.ZP.rotation(-15));
-                poseStack.mulPose(Axis.YP.rotation(20));
+                poseStack.mulPose(Axis.ZP.rotation(-.5f));
+                poseStack.translate(.1, 0, 0);
             }
 
             ItemStackRenderState itemStack = items.get(i);
