@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/lily_of_the_valley/lily_of_the_valley"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/lily_of_the_valley/large_lily_of_the_valley"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/lily_of_the_valley/small_lily_of_the_valley"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/lily_of_the_valley/many_lily_of_the_valleys"
+    }
+  }
+}

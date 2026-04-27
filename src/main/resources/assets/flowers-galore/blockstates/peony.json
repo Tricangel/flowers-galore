@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "half=lower,flower_shape=default": {
+      "model": "flowers-galore:block/peony/peony_bottom"
+    },
+    "half=upper,flower_shape=default": {
+      "model": "flowers-galore:block/peony/peony_top"
+    },
+    "half=lower,flower_shape=large_flowers": {
+      "model": "flowers-galore:block/peony/large_flowers_peony_bottom"
+    },
+    "half=upper,flower_shape=large_flowers": {
+      "model": "flowers-galore:block/peony/large_flowers_peony_top"
+    },
+    "half=lower,flower_shape=small_flowers": {
+      "model": "flowers-galore:block/peony/small_flowers_peony_bottom"
+    },
+    "half=upper,flower_shape=small_flowers": {
+      "model": "flowers-galore:block/peony/small_flowers_peony_top"
+    },
+    "half=lower,flower_shape=many_flowers": {
+      "model": "flowers-galore:block/peony/many_flowers_peony_bottom"
+    },
+    "half=upper,flower_shape=many_flowers": {
+      "model": "flowers-galore:block/peony/many_flowers_peony_top"
+    }
+  }
+}

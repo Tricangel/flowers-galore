@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/orchid/orchid"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/orchid/large_orchid"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/orchid/small_orchid"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/orchid/many_orchids"
+    }
+  }
+}

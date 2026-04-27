@@ -1,28 +1,28 @@
 {
   "variants": {
     "half=lower,flower_shape=default": {
-      "model": "flowers-galore:block/rose/rose_bush_bottom"
+      "model": "flowers-galore:block/rose_bush/rose_bush_bottom"
     },
     "half=upper,flower_shape=default": {
-      "model": "flowers-galore:block/rose/rose_bush_top"
+      "model": "flowers-galore:block/rose_bush/rose_bush_top"
     },
     "half=lower,flower_shape=large_flowers": {
-      "model": "flowers-galore:block/rose/large_flowers_rose_bush_bottom"
+      "model": "flowers-galore:block/rose_bush/large_flowers_rose_bush_bottom"
     },
     "half=upper,flower_shape=large_flowers": {
-      "model": "flowers-galore:block/rose/large_flowers_rose_bush_top"
+      "model": "flowers-galore:block/rose_bush/large_flowers_rose_bush_top"
     },
     "half=lower,flower_shape=small_flowers": {
-      "model": "flowers-galore:block/rose/small_flowers_rose_bush_bottom"
+      "model": "flowers-galore:block/rose_bush/small_flowers_rose_bush_bottom"
     },
     "half=upper,flower_shape=small_flowers": {
-      "model": "flowers-galore:block/rose/small_flowers_rose_bush_top"
+      "model": "flowers-galore:block/rose_bush/small_flowers_rose_bush_top"
     },
     "half=lower,flower_shape=many_flowers": {
-      "model": "flowers-galore:block/rose/many_flowers_rose_bush_bottom"
+      "model": "flowers-galore:block/rose_bush/many_flowers_rose_bush_bottom"
     },
     "half=upper,flower_shape=many_flowers": {
-      "model": "flowers-galore:block/rose/many_flowers_rose_bush_top"
+      "model": "flowers-galore:block/rose_bush/many_flowers_rose_bush_top"
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/tulip/tulip"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/tulip/large_tulip"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/tulip/small_tulip"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/tulip/many_tulips"
+    }
+  }
+}

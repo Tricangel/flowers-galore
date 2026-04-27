@@ -1,0 +1,9 @@
+{
+  "parent": "flowers-galore:block/three_flower_template",
+  "textures": {
+    "0": "flowers-galore:block/oxeye_daisy/oxeye_daisy_stem",
+    "1": "flowers-galore:block/oxeye_daisy/oxeye_daisy_flower_petals",
+    "2": "flowers-galore:block/oxeye_daisy/oxeye_daisy_flower_yolk",
+    "particle": "flowers-galore:block/oxeye_daisy/oxeye_daisy_stem"
+  }
+}

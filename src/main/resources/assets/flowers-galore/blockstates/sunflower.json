@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "half=lower,flower_shape=default": {
+      "model": "flowers-galore:block/sunflower/sunflower_bottom"
+    },
+    "half=upper,flower_shape=default": {
+      "model": "flowers-galore:block/sunflower/sunflower_top"
+    },
+    "half=lower,flower_shape=large_flowers": {
+      "model": "flowers-galore:block/sunflower/large_flowers_sunflower_bottom"
+    },
+    "half=upper,flower_shape=large_flowers": {
+      "model": "flowers-galore:block/sunflower/large_flowers_sunflower_top"
+    },
+    "half=lower,flower_shape=small_flowers": {
+      "model": "flowers-galore:block/sunflower/small_flowers_sunflower_bottom"
+    },
+    "half=upper,flower_shape=small_flowers": {
+      "model": "flowers-galore:block/sunflower/small_flowers_sunflower_top"
+    },
+    "half=lower,flower_shape=many_flowers": {
+      "model": "flowers-galore:block/sunflower/many_flowers_sunflower_bottom"
+    },
+    "half=upper,flower_shape=many_flowers": {
+      "model": "flowers-galore:block/sunflower/many_flowers_sunflower_top"
+    }
+  }
+}

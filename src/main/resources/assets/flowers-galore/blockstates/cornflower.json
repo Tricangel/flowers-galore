@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/cornflower/cornflower"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/cornflower/large_cornflower"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/cornflower/small_lily_of_the_valley"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/cornflower/many_lily_of_the_valleys"
+    }
+  }
+}

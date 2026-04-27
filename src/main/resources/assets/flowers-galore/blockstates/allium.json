@@ -1,16 +1,16 @@
 {
   "variants": {
     "flower_shape=default": {
-      "model": "flowers-galore:block/allium/allium_0"
+      "model": "flowers-galore:block/allium/allium"
     },
-    "flower_shape=anotherone": {
-      "model": "flowers-galore:block/allium/allium_1"
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/allium/large_allium"
     },
-    "flower_shape=pointy": {
-      "model": "flowers-galore:block/allium/allium_2"
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/allium/small_allium"
     },
-    "flower_shape=woah": {
-      "model": "flowers-galore:block/allium/allium_3"
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/allium/many_alliums"
     }
   }
 }

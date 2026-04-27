@@ -15,7 +15,7 @@ public class FlowerMutationHelper {
     public static BlockState mutateFromParents(BlockState parent1, BlockState parent2) {
         Random random = new Random();
         ColourProperty colour = addColoursTogether(parent1.getValue(FlowersGaloreBlockProperties.COLOUR), parent2.getValue(FlowersGaloreBlockProperties.COLOUR));
-        ShapeProperty shape = new Random().nextBoolean() ? parent1.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) : parent2.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE);
+        ShapeProperty shape = random.nextBoolean() ? parent1.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) : parent2.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE);
 
         //mutatecolours
         if (random.nextInt(0, 10) == 0) {
@@ -26,8 +26,11 @@ public class FlowerMutationHelper {
         if (random.nextInt(0, 10) == 0) {
             shape = ShapeProperty.getRandomShape();
         }
+        BlockState mutatedState =  random.nextBoolean() ? parent1 : parent2;
+        mutatedState = mutatedState.setValue(FlowersGaloreBlockProperties.COLOUR, colour);
+        mutatedState = mutatedState.setValue(FlowersGaloreBlockProperties.FLOWER_SHAPE, shape);
 
-        return FlowersGaloreBlocks.ROSE_BUSH.defaultBlockState().setValue(FlowersGaloreBlockProperties.COLOUR, colour).setValue(FlowersGaloreBlockProperties.FLOWER_SHAPE, shape);
+        return mutatedState;
 
     }
 

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/azure_bluet/azure_bluet"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/azure_bluet/large_azure_bluet"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/azure_bluet/small_azure_bluet"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/azure_bluet/many_azure_bluets"
+    }
+  }
+}
