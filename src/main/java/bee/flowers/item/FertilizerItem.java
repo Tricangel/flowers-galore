@@ -6,6 +6,7 @@ import bee.flowers.block.property.ColourProperty;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreBlocks;
 import bee.flowers.registry.FlowersGaloreItemComponents;
+import bee.flowers.registry.FlowersGaloreItems;
 import bee.flowers.util.FlowerMutationHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -52,8 +53,13 @@ public class FertilizerItem extends Item {
             BoneMealItem.addGrowthParticles(level, pos, 25);
             return InteractionResult.SUCCESS;
         }
+        BlockState mutatedState;
 
-        BlockState mutatedState = FlowerMutationHelper.mutateFromParents(state, previousBlock);
+        if (stack.is(FlowersGaloreItems.GOLDEN_FERTILIZER)) {
+            mutatedState = FlowerMutationHelper.mutateFromGoldenParents(state, previousBlock);
+        } else {
+            mutatedState = FlowerMutationHelper.mutateFromParents(state, previousBlock);
+        }
 
         if (!BonemealableBlock.hasSpreadableNeighbourPos(level, pos, mutatedState)) return super.useOn(context);
 

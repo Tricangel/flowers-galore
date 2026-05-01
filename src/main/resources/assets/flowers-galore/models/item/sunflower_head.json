@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flowers-galore:item/sunflower_head_petals",
+    "layer1": "flowers-galore:item/sunflower_head_centre"
+  }
+}

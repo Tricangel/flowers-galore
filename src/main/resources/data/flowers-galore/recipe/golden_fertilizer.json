@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "ingredients": [
+    "#minecraft:flowers",
+    "minecraft:bone_meal"
+  ],
+  "pattern": [
+    "ggg",
+    "gfg",
+    "ggg"
+  ],
+  "key": {
+    "g": "minecraft:gold_nugget",
+    "f": "flowers-galore:fertilizer"
+  },
+  "result": {
+    "id": "flowers-galore:golden_fertilizer"
+  }
+}

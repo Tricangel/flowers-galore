@@ -17,6 +17,7 @@ import java.util.function.Function;
 public class FlowersGaloreItems {
 
     public static final Item FERTILIZER = register("fertilizer", FertilizerItem::new, new Item.Properties().component(FlowersGaloreItemComponents.PREVIOUS_BLOCK, Blocks.AIR.defaultBlockState()));
+    public static final Item GOLDEN_FERTILIZER = register("golden_fertilizer", FertilizerItem::new, new Item.Properties().component(FlowersGaloreItemComponents.PREVIOUS_BLOCK, Blocks.AIR.defaultBlockState()));
 
     public static final Item ROSE_CUTTING = register("rose_cutting", Item::new, new Item.Properties().component(FlowersGaloreItemComponents.FLOWER_COLOUR, ColourProperty.RED.getColour()).equippable(EquipmentSlot.HEAD));
 

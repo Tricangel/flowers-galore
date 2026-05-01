@@ -23,6 +23,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
@@ -34,6 +35,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 import java.util.Random;
@@ -52,8 +54,23 @@ public class BreedableFlower extends FlowerBlock implements BonemealableBlock {
         ItemStack stack = this.asItem().getDefaultInstance();
         Component name = this.getName(state);
         stack.set(DataComponents.ITEM_NAME, name);
+        stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
         stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
         return stack;
+    }
+
+    @Override
+    public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
+        ItemStack stack = context.getItemInHand();
+        BlockState state = this.defaultBlockState();
+
+        if (stack.get(FlowersGaloreItemComponents.FLOWER_COLOUR) != null) {
+            state = state.setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.fromColour(stack.get(FlowersGaloreItemComponents.FLOWER_COLOUR)));
+        }
+        if (stack.get(FlowersGaloreItemComponents.FLOWER_SHAPE) != null) {
+            return  state.setValue(FlowersGaloreBlockProperties.FLOWER_SHAPE, ShapeProperty.fromString(stack.get(FlowersGaloreItemComponents.FLOWER_SHAPE)));
+        }
+        return state;
     }
 
     @Override
@@ -64,7 +81,7 @@ public class BreedableFlower extends FlowerBlock implements BonemealableBlock {
     @Override
     protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
             ItemStack stack = this.asItem().getDefaultInstance();
-            Component name = this.getName(state);
+            Component name = getName(state);
             stack.set(DataComponents.ITEM_NAME, name);
             stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
             stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
@@ -88,8 +105,9 @@ public class BreedableFlower extends FlowerBlock implements BonemealableBlock {
         return true;
     }
 
-    public Component getName(BlockState state) {
-        Component itemName = this.getName();
+    public static Component getName(BlockState state) {
+        //im so so sorry for this
+        Component itemName = state.getBlock().getName();
         Component colour = state.getValue(FlowersGaloreBlockProperties.COLOUR).getDisplayName();
         if (state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) != ShapeProperty.DEFAULT){
             Component shape = state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getDisplayName();

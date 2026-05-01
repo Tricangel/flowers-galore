@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "flowers-galore:item/lily_of_the_valley",
+    "tints": [
+      {
+        "type": "flowers-galore:color",
+        "color": 0
+      }
+    ]
+  }
+}

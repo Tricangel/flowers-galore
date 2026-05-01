@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "flowers-galore:item/allium"
+    "model": "flowers-galore:item/allium",
+    "tints": [
+      {
+        "type": "flowers-galore:color",
+        "color": 0
+      }
+    ]
   }
 }

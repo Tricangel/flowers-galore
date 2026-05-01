@@ -48,6 +48,7 @@ public class TallBreedableFlower extends TallFlowerBlock {
         Component name = this.getName(state);
         stack.set(DataComponents.ITEM_NAME, name);
         stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
+        stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
         return stack;
     }
 
@@ -69,7 +70,7 @@ public class TallBreedableFlower extends TallFlowerBlock {
                 state = state.setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.fromColour(stack.get(FlowersGaloreItemComponents.FLOWER_COLOUR)));
             }
             if (stack.get(FlowersGaloreItemComponents.FLOWER_SHAPE) != null) {
-                state = state.setValue(FlowersGaloreBlockProperties.FLOWER_SHAPE, ShapeProperty.fromString(stack.get(FlowersGaloreItemComponents.FLOWER_SHAPE)));
+                return  state.setValue(FlowersGaloreBlockProperties.FLOWER_SHAPE, ShapeProperty.fromString(stack.get(FlowersGaloreItemComponents.FLOWER_SHAPE)));
             }
             return state;
         } else return null;

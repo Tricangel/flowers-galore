@@ -15,7 +15,6 @@ public class FlowersGaloreModelGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-
     }
 
     @Override

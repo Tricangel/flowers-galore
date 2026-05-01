@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flowers-galore:block/peony/peony_top_flowers",
+    "layer1": "flowers-galore:block/peony/peony_top_stem"
+  }
+}

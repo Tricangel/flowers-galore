@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraft:block/allium"
+    "layer0": "flowers-galore:block/allium/allium",
+    "layer1": "flowers-galore:block/allium/allium_stem"
   }
 }

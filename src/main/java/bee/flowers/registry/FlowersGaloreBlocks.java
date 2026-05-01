@@ -2,6 +2,7 @@ package bee.flowers.registry;
 
 import bee.flowers.Flowersgalore;
 import bee.flowers.block.BreedableFlower;
+import bee.flowers.block.SunflowerHead;
 import bee.flowers.block.TallBreedableFlower;
 import bee.flowers.block.VaseBlock;
 import net.minecraft.core.Registry;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
@@ -35,8 +37,10 @@ public class FlowersGaloreBlocks {
     public static final Block ROSE_BUSH = register("rose_bush", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.ROSE_BUSH), true);
     public static final Block SUNFLOWER = register("sunflower", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SUNFLOWER), true);
     public static final Block PEONY = register("peony", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.PEONY), true);
+    public static final Block LILAC = register("lilac", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LILAC), true);
 
     public static final Block VASE = register("vase", VaseBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT), true);
+    public static final Block SUNFLOWER_HEAD = register("sunflower_head", SunflowerHead::new, BlockBehaviour.Properties.of().noCollision().sound(SoundType.GRASS), true);
 
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {

@@ -1,0 +1,9 @@
+{
+  "parent": "flowers-galore:block/sunflower/sunflower_template",
+  "textures": {
+    "particle": "minecraft:block/sunflower_back",
+    "cross": "minecraft:block/sunflower_top",
+    "back": "flowers-galore:block/sunflower/sunflower_back_small",
+    "front": "flowers-galore:block/sunflower/sunflower_small"
+  }
+}

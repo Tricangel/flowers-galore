@@ -1,0 +1,9 @@
+{
+  "parent": "flowers-galore:block/three_flower_template",
+  "textures": {
+    "0": "flowers-galore:block/azure_bluet/azure_bluet_stem",
+    "1": "flowers-galore:block/azure_bluet/azure_bluet_flower_petals_large",
+    "2": "flowers-galore:block/azure_bluet/azure_bluet_flower_yolk_large",
+    "particle": "flowers-galore:block/azure_bluet/azure_bluet_stem"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flowers-galore:block/azure_bluet/azure_bluet_flower_yolk",
+    "layer1": "flowers-galore:block/azure_bluet/azure_bluet_stem",
+    "layer2": "flowers-galore:block/azure_bluet/azure_bluet_flower_petals"
+  }
+}

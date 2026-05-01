@@ -14,14 +14,15 @@ import java.util.Random;
 public enum ColourProperty implements StringRepresentable {
     WHITE("white", 16777215, Component.translatable("color.minecraft.white")),
     ORANGE("orange", 16742431, Component.translatable("color.minecraft.orange")),
-    MAGENTA("magenta", 11027873, Component.translatable("color.minecraft.magenta")),
+    MAGENTA("magenta", 14586879, Component.translatable("color.minecraft.magenta")),
     LIGHT_BLUE("light_blue", 3133181, Component.translatable("color.minecraft.light_blue")),
     YELLOW("yellow", 16772175, Component.translatable("color.minecraft.yellow")),
     PINK("pink", 15451645, Component.translatable("color.minecraft.pink")),
     PURPLE("purple", 12938751, Component.translatable("color.minecraft.purple")),
     BLUE("blue", 4614891, Component.translatable("color.minecraft.blue")),
     RED("red", 16722731, Component.translatable("color.minecraft.red")),
-    BLACK("black", 2631720, Component.translatable("color.minecraft.black"));
+    BLACK("black", 2631720, Component.translatable("color.minecraft.black")),
+    GOLD("gold", 13866546, Component.translatable("color.minecraft.gold"));
 
     private final String name;
     private final int colour;
@@ -64,7 +65,7 @@ public enum ColourProperty implements StringRepresentable {
 
 
         }
-        return ColourProperty.WHITE;
+        return ColourProperty.RED;
     }
 
     ColourProperty(String name, int colour, Component displayName) {

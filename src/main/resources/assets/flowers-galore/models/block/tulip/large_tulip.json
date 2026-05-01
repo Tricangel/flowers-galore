@@ -1,0 +1,8 @@
+{
+  "parent": "flowers-galore:block/flower_template",
+  "textures": {
+    "0": "flowers-galore:block/tulip/tulip_stem",
+    "1": "flowers-galore:block/tulip/tulip_flower_large",
+    "particle": "flowers-galore:block/tulip/tulip_stem"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "parent": "flowers-galore:block/flower_template",
-  "textures": {
-    "0": "flowers-galore:block/allium/allium_3_stem",
-    "1": "flowers-galore:block/allium/allium_3",
-    "particle": "flowers-galore:block/allium/allium_3_stem"
-  }
-}

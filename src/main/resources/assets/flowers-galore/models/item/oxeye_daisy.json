@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "flowers-galore:block/oxeye_daisy/oxeye_daisy_flower_yolk",
+    "layer1": "flowers-galore:block/oxeye_daisy/oxeye_daisy_stem",
+    "layer2": "flowers-galore:block/oxeye_daisy/oxeye_daisy_flower_petals"
+  }
+}

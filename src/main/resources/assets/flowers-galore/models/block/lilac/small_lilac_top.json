@@ -1,0 +1,8 @@
+{
+  "parent": "flowers-galore:block/tall_flower_template",
+  "textures": {
+    "0": "flowers-galore:block/lilac/lilac_top_stem",
+    "1": "flowers-galore:block/lilac/lilac_top_flowers_small",
+    "particle": "flowers-galore:block/lilac/lilac_top_stem"
+  }
+}

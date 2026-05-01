@@ -34,6 +34,30 @@ public class FlowerMutationHelper {
 
     }
 
+    public static BlockState mutateFromGoldenParents(BlockState parent1, BlockState parent2) {
+        Random random = new Random();
+        ColourProperty colour = addColoursTogether(parent1.getValue(FlowersGaloreBlockProperties.COLOUR), parent2.getValue(FlowersGaloreBlockProperties.COLOUR));
+        ShapeProperty shape = random.nextBoolean() ? parent1.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) : parent2.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE);
+
+        //mutatecolours
+        if (random.nextInt(0, 10) == 0) {
+            if (random.nextInt(0, 100) == 0) {
+                colour = ColourProperty.GOLD;
+            } else colour = ColourProperty.getRandomColour();
+        }
+
+        //mutateshape which sure doesnt do anything as of writing this, its still important
+        if (random.nextInt(0, 10) == 0) {
+            shape = ShapeProperty.getRandomShape();
+        }
+        BlockState mutatedState =  random.nextBoolean() ? parent1 : parent2;
+        mutatedState = mutatedState.setValue(FlowersGaloreBlockProperties.COLOUR, colour);
+        mutatedState = mutatedState.setValue(FlowersGaloreBlockProperties.FLOWER_SHAPE, shape);
+
+        return mutatedState;
+
+    }
+
     public static ColourProperty addColoursTogether(ColourProperty colour, ColourProperty colour1) {
         List<ColourProperty> colours = List.of(colour1, colour);
 
