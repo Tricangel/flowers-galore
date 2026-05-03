@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Random;
 
 public class TallBreedableFlower extends TallFlowerBlock {
-    private static final EnumProperty<ShapeProperty> SHAPE = FlowersGaloreBlockProperties.FLOWER_SHAPE;
+    public static final EnumProperty<ShapeProperty> SHAPE = FlowersGaloreBlockProperties.FLOWER_SHAPE;
     public static final EnumProperty<ColourProperty> COLOUR = FlowersGaloreBlockProperties.COLOUR;
 
     public TallBreedableFlower(Properties properties) {

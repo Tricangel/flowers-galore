@@ -14,13 +14,30 @@ import java.util.concurrent.CompletableFuture;
 public class FlowersGaloreTagGen extends FabricTagsProvider.ItemTagsProvider {
 
 
-    public FlowersGaloreTagGen(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture, @Nullable BlockTagsProvider blockTagsProvider) {
-        super(output, registryLookupFuture, blockTagsProvider);
+    public FlowersGaloreTagGen(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+        super(output, registryLookupFuture);
     }
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         valueLookupBuilder(ItemTags.FLOWERS)
+                .add(FlowersGaloreItems.ROSE_CUTTING)
+                .add(FlowersGaloreBlocks.SUNFLOWER_HEAD.asItem())
+                .add(FlowersGaloreBlocks.ALLIUM.asItem())
+                .add(FlowersGaloreBlocks.TULIP.asItem())
+                .add(FlowersGaloreBlocks.DANDELION.asItem())
+                .add(FlowersGaloreBlocks.POPPY.asItem())
+                .add(FlowersGaloreBlocks.ORCHID.asItem())
+                .add(FlowersGaloreBlocks.AZURE_BLUET.asItem())
+                .add(FlowersGaloreBlocks.OXEYE_DAISY.asItem())
+                .add(FlowersGaloreBlocks.CORNFlOWER.asItem())
+                .add(FlowersGaloreBlocks.LILY_OF_THE_VALLEY.asItem())
+                .add(FlowersGaloreBlocks.SUNFLOWER.asItem())
+                .add(FlowersGaloreBlocks.PEONY.asItem())
+                .add(FlowersGaloreBlocks.LILAC.asItem())
+                .add(FlowersGaloreBlocks.ROSE_BUSH.asItem());
+
+        valueLookupBuilder(ItemTags.BEE_FOOD)
                 .add(FlowersGaloreItems.ROSE_CUTTING)
                 .add(FlowersGaloreBlocks.SUNFLOWER_HEAD.asItem())
                 .add(FlowersGaloreBlocks.ALLIUM.asItem())

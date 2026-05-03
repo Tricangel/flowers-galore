@@ -18,6 +18,9 @@
   "block.flowers-galore.sunflower_head": "Sunflower Head",
   "item.flowers-galore.fertilizer": "Fertilizer",
   "item.flowers-galore.golden_fertilizer": "Golden Fertilizer",
+  "block.flowers-galore.vase": "Vase",
+
+  "creativeTab.flowers-galore": "Flowers Galore",
 
   "shape.flowers-galore.default": "Default",
   "shape.flowers-galore.large_flowers": "Large",

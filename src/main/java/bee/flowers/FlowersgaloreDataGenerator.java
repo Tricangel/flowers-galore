@@ -1,5 +1,6 @@
 package bee.flowers;
 
+import bee.flowers.datagen.FlowersGaloreBlockTagGen;
 import bee.flowers.datagen.FlowersGaloreLootGen;
 import bee.flowers.datagen.FlowersGaloreModelGen;
 import bee.flowers.datagen.FlowersGaloreTagGen;
@@ -13,6 +14,8 @@ public class FlowersgaloreDataGenerator implements DataGeneratorEntrypoint {
 
         pack.addProvider(FlowersGaloreModelGen::new);
         pack.addProvider(FlowersGaloreLootGen::new);
+        pack.addProvider(FlowersGaloreBlockTagGen::new);
+        pack.addProvider(FlowersGaloreTagGen::new);
 
     }
 }
