@@ -3,9 +3,9 @@
 	"id": "flowers-galore",
 	"version": "${version}",
 	"name": "flowers-galore",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds flower gambling",
 	"authors": [
-		"Me!"
+		"Bee :3"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
