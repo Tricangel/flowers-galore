@@ -2,20 +2,15 @@ package bee.flowers;
 
 import bee.flowers.block.entity.VaseBlockRenderer;
 import bee.flowers.block.property.ColourProperty;
-import bee.flowers.item.RoseColourTintSource;
+import bee.flowers.item.FlowerColourTintSource;
 import bee.flowers.registry.FlowersGaloreBlockEntities;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreBlocks;
-import bee.flowers.registry.FlowersGaloreItemComponents;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.color.item.ItemTintSources;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -27,7 +22,7 @@ public class FlowersgaloreClient implements ClientModInitializer {
 
         BlockEntityRenderers.register(FlowersGaloreBlockEntities.VASE_BLOCK_ENTITY, VaseBlockRenderer::new);
 
-        ItemTintSources.ID_MAPPER.put(Identifier.fromNamespaceAndPath(Flowersgalore.MOD_ID, "color"), RoseColourTintSource.MAP_CODEC);
+        ItemTintSources.ID_MAPPER.put(Identifier.fromNamespaceAndPath(Flowersgalore.MOD_ID, "color"), FlowerColourTintSource.MAP_CODEC);
 
 
 

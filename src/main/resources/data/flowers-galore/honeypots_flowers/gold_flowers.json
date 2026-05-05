@@ -5,7 +5,7 @@
   "state": {"colour": "gold"},
   "effects": [{
     "id": "im:gold",
-    "amplifier": 1,
-    "max_amplifier": 1
+    "amplifier": 0,
+    "max_amplifier": 0
   }]
 }

@@ -27,7 +27,7 @@ public class LivingEntityRendererMixin {
             if (player.hasEffect(Gold.GOLD)) {
                 ClientLevel clientLevel = Minecraft.getInstance().level;
                 poseStack.pushPose();
-                poseStack.translate(-0.3, 0, -0.3);
+                poseStack.translate(-state.boundingBoxWidth / 2, 0, -state.boundingBoxWidth / 2);
                 poseStack.scale(state.boundingBoxWidth, state.boundingBoxHeight, state.boundingBoxWidth);
 
                 MovingBlockRenderState movingBlockRenderState = new MovingBlockRenderState();
