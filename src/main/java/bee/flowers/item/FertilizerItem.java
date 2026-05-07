@@ -87,11 +87,11 @@ public class FertilizerItem extends Item {
     private boolean placeNearby(Level level, BlockPos pos, BlockState parent, BlockState mutatedState) {
         if (parent.getBlock() instanceof TallBreedableFlower && parent.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF).equals(DoubleBlockHalf.UPPER)) {
             pos = pos.below();
-            mutatedState = mutatedState.setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER);
+            if (mutatedState.getBlock() instanceof TallBreedableFlower) {
+                mutatedState = mutatedState.setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER);
+            }
         }
-        System.out.println(mutatedState);
         Optional<BlockPos> pos1 = BonemealableBlock.findSpreadableNeighbourPos(level, pos, mutatedState);
-        System.out.println(pos1);
         if (pos1.isEmpty()) return false;
         BlockPos mutatedPos = pos1.get();
 
