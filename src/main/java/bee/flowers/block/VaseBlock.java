@@ -38,7 +38,8 @@ public class VaseBlock extends BaseEntityBlock {
         if (!(level.getBlockEntity(pos) instanceof VaseBlockEntity) || !itemStack.is(FlowersGaloreItems.ROSE_CUTTING)) return super.useItemOn(itemStack, state, level, pos, player, hand, hitResult);
         VaseBlockEntity vaseBlockEntity = (VaseBlockEntity) level.getBlockEntity(pos);
 
-        if (vaseBlockEntity.addIngredients(itemStack)) {
+        if (vaseBlockEntity.addIngredients(itemStack.copyWithCount(1))) {
+            itemStack.shrink(1);
             return InteractionResult.SUCCESS;
         }
 
@@ -64,16 +65,6 @@ public class VaseBlock extends BaseEntityBlock {
         );
     }
 
-    @Override
-    protected void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack tool, boolean dropExperience) {
-        if (level.getBlockEntity(pos) instanceof VaseBlockEntity vaseBlockEntity) {
-            for (int i = 0; i < vaseBlockEntity.getIngredients().size(); i++) {
-                Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), vaseBlockEntity.getIngredients().get(i));
-                Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), Items.ACACIA_FENCE.getDefaultInstance());
-            }
-        }
-        super.spawnAfterBreak(state, level, pos, tool, dropExperience);
-    }
 }
 
 
