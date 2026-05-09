@@ -14,6 +14,16 @@
   "block.flowers-galore.cornflower": "Cornflower",
   "block.flowers-galore.lily_of_the_valley": "Lily of the Valley",
 
+  "block.flowers-galore.potted_poppy": "Poppy",
+  "block.flowers-galore.potted_dandelion": "Dandelion",
+  "block.flowers-galore.potted_orchid": "Orchid",
+  "block.flowers-galore.potted_allium": "Allium",
+  "block.flowers-galore.potted_azure_bluet": "Azure Bluet",
+  "block.flowers-galore.potted_tulip": "Tulip",
+  "block.flowers-galore.potted_oxeye_daisy": "Oxeye Daisy",
+  "block.flowers-galore.potted_cornflower": "Cornflower",
+  "block.flowers-galore.potted_lily_of_the_valley": "Lily of the Valley",
+
   "item.flowers-galore.rose_cutting": "Rose Cutting",
   "block.flowers-galore.sunflower_head": "Sunflower Head",
   "item.flowers-galore.fertilizer": "Fertilizer",

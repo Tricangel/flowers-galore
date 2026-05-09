@@ -1,0 +1,7 @@
+{
+  "parent": "flowers-galore:block/flower_pot_template",
+  "textures": {
+    "plant": "flowers-galore:block/dandelion/dandelion_stem",
+    "flower": "flowers-galore:block/dandelion/dandelion_flower_many"
+  }
+}

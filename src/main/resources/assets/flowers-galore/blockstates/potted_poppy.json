@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/poppy/potted_poppy"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/poppy/potted_large_poppy"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/poppy/potted_small_poppy"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/poppy/potted_many_poppys"
+    }
+  }
+}

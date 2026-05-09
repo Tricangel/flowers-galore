@@ -1,0 +1,7 @@
+{
+  "parent": "flowers-galore:block/flower_pot_template",
+  "textures": {
+    "plant": "flowers-galore:block/allium/allium_stem",
+    "flower": "flowers-galore:block/allium/allium_many"
+  }
+}

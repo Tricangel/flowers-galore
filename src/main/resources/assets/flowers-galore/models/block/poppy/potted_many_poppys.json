@@ -1,0 +1,7 @@
+{
+  "parent": "flowers-galore:block/flower_pot_template",
+  "textures": {
+    "plant": "flowers-galore:block/poppy/poppy_stem",
+    "flower": "flowers-galore:block/poppy/poppy_flower_many"
+  }
+}

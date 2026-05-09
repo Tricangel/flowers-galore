@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/oxeye_daisy/potted_oxeye_daisy"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/oxeye_daisy/potted_large_oxeye_daisy"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/oxeye_daisy/potted_small_oxeye_daisy"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/oxeye_daisy/potted_many_oxeye_daisys"
+    }
+  }
+}

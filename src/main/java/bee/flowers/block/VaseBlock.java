@@ -28,6 +28,8 @@ import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 
+
+
 public class VaseBlock extends BaseEntityBlock {
     public VaseBlock(Properties properties) {
         super(properties);

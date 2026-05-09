@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_shape=default": {
+      "model": "flowers-galore:block/cornflower/potted_cornflower"
+    },
+    "flower_shape=large_flowers": {
+      "model": "flowers-galore:block/cornflower/potted_large_cornflower"
+    },
+    "flower_shape=small_flowers": {
+      "model": "flowers-galore:block/cornflower/potted_small_cornflower"
+    },
+    "flower_shape=many_flowers": {
+      "model": "flowers-galore:block/cornflower/potted_many_cornflowers"
+    }
+  }
+}

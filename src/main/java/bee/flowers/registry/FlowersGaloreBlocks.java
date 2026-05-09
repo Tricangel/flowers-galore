@@ -1,10 +1,7 @@
 package bee.flowers.registry;
 
 import bee.flowers.Flowersgalore;
-import bee.flowers.block.BreedableFlower;
-import bee.flowers.block.SunflowerHead;
-import bee.flowers.block.TallBreedableFlower;
-import bee.flowers.block.VaseBlock;
+import bee.flowers.block.*;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -13,10 +10,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
@@ -38,6 +32,17 @@ public class FlowersGaloreBlocks {
     public static final Block SUNFLOWER = register("sunflower", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SUNFLOWER), true);
     public static final Block PEONY = register("peony", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.PEONY), true);
     public static final Block LILAC = register("lilac", TallBreedableFlower::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LILAC), true);
+
+
+    public static final Block POTTED_ALLIUM = register("potted_allium", instance -> new PottedFlowersGaloreFlower(ALLIUM, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_TULIP = register("potted_tulip", instance -> new PottedFlowersGaloreFlower(TULIP, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_DANDELION = register("potted_dandelion", instance -> new PottedFlowersGaloreFlower(DANDELION, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_POPPY = register("potted_poppy", instance -> new PottedFlowersGaloreFlower(POPPY, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_ORCHID = register("potted_orchid", instance -> new PottedFlowersGaloreFlower(ORCHID, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_AZURE_BLUET = register("potted_azure_bluet", instance -> new PottedFlowersGaloreFlower(AZURE_BLUET, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_OXEYE_DAISY = register("potted_oxeye_daisy", instance -> new PottedFlowersGaloreFlower(OXEYE_DAISY, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_CORNFlOWER = register("potted_cornflower", instance -> new PottedFlowersGaloreFlower(CORNFlOWER, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    public static final Block POTTED_LILY_OF_THE_VALLEY = register("potted_lily_of_the_valley", instance -> new PottedFlowersGaloreFlower(LILY_OF_THE_VALLEY, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
 
     public static final Block VASE = register("vase", VaseBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT), true);
     public static final Block SUNFLOWER_HEAD = register("sunflower_head", SunflowerHead::new, BlockBehaviour.Properties.of().noCollision().sound(SoundType.GRASS), true);

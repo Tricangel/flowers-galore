@@ -65,7 +65,11 @@ public class FertilizerItem extends Item {
     }
 
 
-    private boolean getPreviousBlock(Level level, BlockPos pos, ItemStack stack) {
+
+
+
+
+    private static boolean getPreviousBlock(Level level, BlockPos pos, ItemStack stack) {
         if (stack.get(FlowersGaloreItemComponents.PREVIOUS_BLOCK) != null &&
                 (stack.get(FlowersGaloreItemComponents.PREVIOUS_BLOCK).getBlock() instanceof BreedableFlower || stack.get(FlowersGaloreItemComponents.PREVIOUS_BLOCK).getBlock() instanceof TallBreedableFlower)) {
             return false;
@@ -84,7 +88,7 @@ public class FertilizerItem extends Item {
         return true;
     }
 
-    private boolean placeNearby(Level level, BlockPos pos, BlockState parent, BlockState mutatedState) {
+    public static boolean placeNearby(Level level, BlockPos pos, BlockState parent, BlockState mutatedState) {
         if (parent.getBlock() instanceof TallBreedableFlower && parent.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF).equals(DoubleBlockHalf.UPPER)) {
             pos = pos.below();
             if (mutatedState.getBlock() instanceof TallBreedableFlower) {

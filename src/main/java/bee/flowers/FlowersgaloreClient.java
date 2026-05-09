@@ -35,7 +35,9 @@ public class FlowersgaloreClient implements ClientModInitializer {
 
                                             }
         ), FlowersGaloreBlocks.ROSE_BUSH, FlowersGaloreBlocks.SUNFLOWER, FlowersGaloreBlocks.PEONY, FlowersGaloreBlocks.TULIP, FlowersGaloreBlocks.ALLIUM, FlowersGaloreBlocks.DANDELION, FlowersGaloreBlocks.POPPY,
-                FlowersGaloreBlocks.ORCHID, FlowersGaloreBlocks.AZURE_BLUET, FlowersGaloreBlocks.OXEYE_DAISY, FlowersGaloreBlocks.CORNFlOWER, FlowersGaloreBlocks.LILY_OF_THE_VALLEY, FlowersGaloreBlocks.LILAC, FlowersGaloreBlocks.SUNFLOWER_HEAD);
+                FlowersGaloreBlocks.ORCHID, FlowersGaloreBlocks.AZURE_BLUET, FlowersGaloreBlocks.OXEYE_DAISY, FlowersGaloreBlocks.CORNFlOWER, FlowersGaloreBlocks.LILY_OF_THE_VALLEY, FlowersGaloreBlocks.LILAC, FlowersGaloreBlocks.SUNFLOWER_HEAD,
+                FlowersGaloreBlocks.POTTED_TULIP, FlowersGaloreBlocks.POTTED_ALLIUM, FlowersGaloreBlocks.POTTED_DANDELION, FlowersGaloreBlocks.POTTED_POPPY, FlowersGaloreBlocks.POTTED_LILY_OF_THE_VALLEY,
+                FlowersGaloreBlocks.POTTED_ORCHID, FlowersGaloreBlocks.POTTED_AZURE_BLUET, FlowersGaloreBlocks.POTTED_OXEYE_DAISY, FlowersGaloreBlocks.POTTED_CORNFlOWER);
 
     }
 }
