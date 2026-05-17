@@ -1,0 +1,76 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:noise_threshold_provider",
+      "default_state": {
+        "Name": "flowers-galore:dandelion",
+        "Properties": {
+          "colour": "yellow"
+        }
+      },
+      "high_chance": 0.33333334,
+      "high_states": [
+        {
+          "Name": "flowers-galore:poppy",
+          "Properties": {
+            "colour": "red"
+          }
+        },
+        {
+          "Name": "flowers-galore:azure_bluet",
+          "Properties": {
+            "colour": "yellow"
+          }
+        },
+        {
+          "Name": "flowers-galore:oxeye_daisy",
+          "Properties": {
+            "colour": "yellow"
+          }
+        },
+        {
+          "Name": "flowers-galore:cornflower",
+          "Properties": {
+            "colour": "blue"
+          }
+        }
+      ],
+      "low_states": [
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "orange"
+          }
+        },
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "red"
+          }
+        },
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "pink"
+          }
+        },
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "white"
+          }
+        }
+      ],
+      "noise": {
+        "amplitudes": [
+          1.0
+        ],
+        "firstOctave": 0
+      },
+      "scale": 0.005,
+      "seed": 2345,
+      "threshold": -0.8
+    }
+  }
+}

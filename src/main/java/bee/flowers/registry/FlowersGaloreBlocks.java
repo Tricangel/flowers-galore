@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
 
@@ -45,7 +46,7 @@ public class FlowersGaloreBlocks {
     public static final Block POTTED_LILY_OF_THE_VALLEY = register("potted_lily_of_the_valley", instance -> new PottedFlowersGaloreFlower(LILY_OF_THE_VALLEY, instance), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
 
     public static final Block VASE = register("vase", VaseBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT), true);
-    public static final Block SUNFLOWER_HEAD = register("sunflower_head", SunflowerHead::new, BlockBehaviour.Properties.of().noCollision().sound(SoundType.GRASS), true);
+    public static final Block SUNFLOWER_HEAD = register("sunflower_head", SunflowerHead::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ).noCollision().sound(SoundType.GRASS), true);
 
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {

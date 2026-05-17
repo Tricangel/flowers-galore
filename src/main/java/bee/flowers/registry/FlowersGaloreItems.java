@@ -21,7 +21,6 @@ public class FlowersGaloreItems {
 
     public static final Item ROSE_CUTTING = register("rose_cutting", Item::new, new Item.Properties().component(FlowersGaloreItemComponents.FLOWER_COLOUR, ColourProperty.RED.getColour()).equippable(EquipmentSlot.HEAD));
 
-
     public static void init() {
     }
 

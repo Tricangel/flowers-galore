@@ -88,6 +88,8 @@ public enum ColourProperty implements StringRepresentable {
                 BLACK.getColour(), BLACK
         );
 
+        if (colour == GOLD.getColour()) return GOLD;
+
         return map.getOrDefault(colour, ColourProperty.getRandomColour());
     }
 

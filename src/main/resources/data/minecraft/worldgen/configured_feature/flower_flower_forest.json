@@ -1,0 +1,84 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:noise_provider",
+      "noise": {
+        "amplitudes": [
+          1.0
+        ],
+        "firstOctave": 0
+      },
+      "scale": 0.020833334,
+      "seed": 2345,
+      "states": [
+        {
+          "Name": "flowers-galore:dandelion",
+          "Properties": {
+            "colour": "yellow"
+          }
+        },
+        {
+          "Name": "flowers-galore:poppy",
+          "Properties": {
+            "colour": "red"
+          }
+        },
+        {
+          "Name": "flowers-galore:allium",
+          "Properties": {
+            "colour": "magenta"
+          }
+        },
+        {
+          "Name": "flowers-galore:azure_bluet",
+          "Properties": {
+            "colour": "yellow"
+          }
+        },
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "red"
+          }
+        },
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "orange"
+          }
+        },
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "white"
+          }
+        },
+        {
+          "Name": "flowers-galore:tulip",
+          "Properties": {
+            "colour": "pink"
+          }
+        },
+        {
+          "Name": "flowers-galore:oxeye_daisy",
+          "Properties": {
+            "colour": "yellow"
+          }
+        },
+        {
+          "Name": "flowers-galore:cornflower",
+          "Properties": {
+            "colour": "blue"
+          }
+        },
+        {
+          "Name": "flowers-galore:lily_of_the_valley",
+          "Properties": {
+            "colour": "white"
+          }
+        }
+      ]
+    }
+  }
+}
