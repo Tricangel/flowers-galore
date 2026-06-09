@@ -22,35 +22,12 @@ public class FlowersGaloreBlockTagGen extends FabricTagsProvider.BlockTagsProvid
     protected void addTags(HolderLookup.Provider provider) {
         valueLookupBuilder(BlockTags.BEE_ATTRACTIVE)
                 .add(FlowersGaloreBlocks.SUNFLOWER_HEAD)
-                .add(FlowersGaloreBlocks.ALLIUM)
-                .add(FlowersGaloreBlocks.TULIP)
-                .add(FlowersGaloreBlocks.DANDELION)
-                .add(FlowersGaloreBlocks.POPPY)
-                .add(FlowersGaloreBlocks.ORCHID)
-                .add(FlowersGaloreBlocks.AZURE_BLUET)
-                .add(FlowersGaloreBlocks.OXEYE_DAISY)
-                .add(FlowersGaloreBlocks.CORNFlOWER)
-                .add(FlowersGaloreBlocks.LILY_OF_THE_VALLEY)
-                .add(FlowersGaloreBlocks.SUNFLOWER)
-                .add(FlowersGaloreBlocks.PEONY)
-                .add(FlowersGaloreBlocks.LILAC)
-                .add(FlowersGaloreBlocks.ROSE_BUSH);
+                .add(FlowersGaloreBlocks.TULIP);
 
         valueLookupBuilder(BlockTags.FLOWERS)
                 .add(FlowersGaloreBlocks.SUNFLOWER_HEAD)
-                .add(FlowersGaloreBlocks.ALLIUM)
-                .add(FlowersGaloreBlocks.TULIP)
-                .add(FlowersGaloreBlocks.DANDELION)
-                .add(FlowersGaloreBlocks.POPPY)
-                .add(FlowersGaloreBlocks.ORCHID)
-                .add(FlowersGaloreBlocks.AZURE_BLUET)
-                .add(FlowersGaloreBlocks.OXEYE_DAISY)
-                .add(FlowersGaloreBlocks.CORNFlOWER)
-                .add(FlowersGaloreBlocks.LILY_OF_THE_VALLEY)
-                .add(FlowersGaloreBlocks.SUNFLOWER)
-                .add(FlowersGaloreBlocks.PEONY)
-                .add(FlowersGaloreBlocks.LILAC)
-                .add(FlowersGaloreBlocks.ROSE_BUSH);
+                .add(FlowersGaloreBlocks.TULIP);
+
 
 
     }

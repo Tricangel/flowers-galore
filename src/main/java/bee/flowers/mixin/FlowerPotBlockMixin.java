@@ -6,6 +6,7 @@ import bee.flowers.block.property.ColourProperty;
 import bee.flowers.block.property.ShapeProperty;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreItemComponents;
+import bee.flowers.util.FlowerMutationHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.stats.Stats;
@@ -73,7 +74,7 @@ public abstract class FlowerPotBlockMixin {
                 if (!blockState.isAir()) {
                     stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
                     stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
-                    stack.set(DataComponents.ITEM_NAME, BreedableFlower.getName(state));
+                    stack.set(DataComponents.ITEM_NAME, FlowerMutationHelper.getName(state));
                 }
                 cir.setReturnValue(stack);
 
@@ -90,7 +91,7 @@ public abstract class FlowerPotBlockMixin {
                 if (!blockState.isAir()) {
                     stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
                     stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
-                    stack.set(DataComponents.ITEM_NAME, BreedableFlower.getName(state));
+                    stack.set(DataComponents.ITEM_NAME, FlowerMutationHelper.getName(state));
                 }
                 if (!player.addItem(stack)) {
                     player.drop(stack, false);

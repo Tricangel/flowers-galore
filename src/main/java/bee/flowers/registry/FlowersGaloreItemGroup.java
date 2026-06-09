@@ -23,20 +23,8 @@ public class FlowersGaloreItemGroup {
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(FlowersGaloreItems.FERTILIZER))
                     .title(Component.translatable("creativeTab.flowers-galore"))
                     .displayItems((params, output) -> {
-                        output.accept(flower(FlowersGaloreBlocks.ALLIUM.asItem()));
                         output.accept(flower(FlowersGaloreBlocks.TULIP.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.DANDELION.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.POPPY.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.ORCHID.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.AZURE_BLUET.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.OXEYE_DAISY.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.CORNFlOWER.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.LILY_OF_THE_VALLEY.asItem()));
 
-                        output.accept(flower(FlowersGaloreBlocks.ROSE_BUSH.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.SUNFLOWER.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.PEONY.asItem()));
-                        output.accept(flower(FlowersGaloreBlocks.LILAC.asItem()));
 
 
                         output.accept(FlowersGaloreItems.FERTILIZER);

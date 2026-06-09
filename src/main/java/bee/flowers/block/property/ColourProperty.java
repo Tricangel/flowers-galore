@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Random;
 
 public enum ColourProperty implements StringRepresentable {
+    RANDOM("random", 0, Component.translatable("color.flowers-galore.random")),
     WHITE("white", 16777215, Component.translatable("color.minecraft.white")),
     ORANGE("orange", 16742431, Component.translatable("color.minecraft.orange")),
     MAGENTA("magenta", 14586879, Component.translatable("color.minecraft.magenta")),

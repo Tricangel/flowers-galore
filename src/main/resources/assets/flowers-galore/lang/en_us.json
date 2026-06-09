@@ -1,28 +1,9 @@
 {
-  "block.flowers-galore.rose_bush": "Rose Bush",
-  "block.flowers-galore.peony": "Peony",
-  "block.flowers-galore.lilac": "Lilac",
-  "block.flowers-galore.sunflower": "Sunflower",
 
-  "block.flowers-galore.poppy": "Poppy",
-  "block.flowers-galore.dandelion": "Dandelion",
-  "block.flowers-galore.orchid": "Orchid",
-  "block.flowers-galore.allium": "Allium",
-  "block.flowers-galore.azure_bluet": "Azure Bluet",
   "block.flowers-galore.tulip": "Tulip",
-  "block.flowers-galore.oxeye_daisy": "Oxeye Daisy",
-  "block.flowers-galore.cornflower": "Cornflower",
-  "block.flowers-galore.lily_of_the_valley": "Lily of the Valley",
 
-  "block.flowers-galore.potted_poppy": "Poppy",
-  "block.flowers-galore.potted_dandelion": "Dandelion",
-  "block.flowers-galore.potted_orchid": "Orchid",
-  "block.flowers-galore.potted_allium": "Allium",
-  "block.flowers-galore.potted_azure_bluet": "Azure Bluet",
   "block.flowers-galore.potted_tulip": "Tulip",
-  "block.flowers-galore.potted_oxeye_daisy": "Oxeye Daisy",
-  "block.flowers-galore.potted_cornflower": "Cornflower",
-  "block.flowers-galore.potted_lily_of_the_valley": "Lily of the Valley",
+
 
   "item.flowers-galore.rose_cutting": "Rose Cutting",
   "block.flowers-galore.sunflower_head": "Sunflower Head",
@@ -36,5 +17,6 @@
   "shape.flowers-galore.large_flowers": "Large",
   "shape.flowers-galore.small_flowers": "Small",
   "shape.flowers-galore.many_flowers": "Multiple",
-  "color.minecraft.gold": "Gold"
+  "color.minecraft.gold": "Gold",
+  "color.flowrs-galore.random": "Random"
 }

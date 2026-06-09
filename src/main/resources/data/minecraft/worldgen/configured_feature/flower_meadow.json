@@ -26,37 +26,37 @@
           }
         },
         {
-          "Name": "flowers-galore:allium",
+          "Name": "minecraft:allium",
           "Properties": {
             "colour": "magenta"
           }
         },
         {
-          "Name": "flowers-galore:poppy",
+          "Name": "minecraft:poppy",
           "Properties": {
             "colour": "red"
           }
         },
         {
-          "Name": "flowers-galore:azure_bluet",
+          "Name": "minecraft:azure_bluet",
           "Properties": {
             "colour": "yellow"
           }
         },
         {
-          "Name": "flowers-galore:dandelion",
+          "Name": "minecraft:dandelion",
           "Properties": {
             "colour": "yellow"
           }
         },
         {
-          "Name": "flowers-galore:cornflower",
+          "Name": "minecraft:cornflower",
           "Properties": {
             "colour": "blue"
           }
         },
         {
-          "Name": "flowers-galore:oxeye_daisy",
+          "Name": "minecraft:oxeye_daisy",
           "Properties": {
             "colour": "yellow"
           }

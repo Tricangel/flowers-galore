@@ -6,7 +6,7 @@
       "entries": [
         {
           "data": {
-            "Name": "flowers-galore:poppy",
+            "Name": "minecraft:poppy",
             "Properties": {
               "colour": "red"
             }
@@ -15,7 +15,7 @@
         },
         {
           "data": {
-            "Name": "flowers-galore:dandelion",
+            "Name": "minecraft:dandelion",
             "Properties": {
               "colour": "yellow"
             }

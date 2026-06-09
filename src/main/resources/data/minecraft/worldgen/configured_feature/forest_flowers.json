@@ -9,7 +9,7 @@
             "to_place": {
               "type": "minecraft:simple_state_provider",
               "state": {
-                "Name": "flowers-galore:lilac",
+                "Name": "minecraft:lilac",
                 "Properties": {
                   "half": "lower",
                   "colour": "magenta"
@@ -55,7 +55,7 @@
             "to_place": {
               "type": "minecraft:simple_state_provider",
               "state": {
-                "Name": "flowers-galore:rose_bush",
+                "Name": "minecraft:rose_bush",
                 "Properties": {
                   "half": "lower",
                   "colour": "red"
@@ -100,7 +100,7 @@
             "to_place": {
               "type": "minecraft:simple_state_provider",
               "state": {
-                "Name": "flowers-galore:peony",
+                "Name": "minecraft:peony",
                 "Properties": {
                   "half": "lower",
                   "colour": "magenta"

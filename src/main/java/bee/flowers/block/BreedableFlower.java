@@ -6,6 +6,7 @@ import bee.flowers.block.property.ShapeProperty;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreBlocks;
 import bee.flowers.registry.FlowersGaloreItemComponents;
+import bee.flowers.util.FlowerMutationHelper;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,6 +27,7 @@ import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,6 +35,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jspecify.annotations.Nullable;
@@ -52,7 +55,7 @@ public class BreedableFlower extends FlowerBlock implements BonemealableBlock {
     @Override
     protected ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
         ItemStack stack = this.asItem().getDefaultInstance();
-        Component name = this.getName(state);
+        Component name = FlowerMutationHelper.getName(state);
         stack.set(DataComponents.ITEM_NAME, name);
         stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
         stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
@@ -80,8 +83,9 @@ public class BreedableFlower extends FlowerBlock implements BonemealableBlock {
 
     @Override
     protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
-            ItemStack stack = this.asItem().getDefaultInstance();
-            Component name = getName(state);
+        if (state.getValue(FlowersGaloreBlockProperties.COLOUR).equals(ColourProperty.RANDOM)) state = state.setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.getRandomColour());
+        ItemStack stack = this.asItem().getDefaultInstance();
+            Component name = FlowerMutationHelper.getName(state);
             stack.set(DataComponents.ITEM_NAME, name);
             stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
             stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
@@ -105,17 +109,6 @@ public class BreedableFlower extends FlowerBlock implements BonemealableBlock {
         return true;
     }
 
-    public static Component getName(BlockState state) {
-        //im so so sorry for this
-        Component itemName = state.getBlock().getName();
-        Component colour = state.getValue(FlowersGaloreBlockProperties.COLOUR).getDisplayName();
-        if (state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) != ShapeProperty.DEFAULT){
-            Component shape = state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getDisplayName();
-            return Component.literal(shape.getString() + " " + colour.getString() + " " + itemName.getString());
-        }
-        return Component.literal(colour.getString() + " " + itemName.getString());
-    }
-
     @Override
     public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return false;
@@ -130,5 +123,13 @@ public class BreedableFlower extends FlowerBlock implements BonemealableBlock {
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
 
+    }
+
+    @Override
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable Orientation orientation, boolean movedByPiston) {
+        super.neighborChanged(state, level, pos, block, orientation, movedByPiston);
+        if (state.getValue(FlowersGaloreBlockProperties.COLOUR).equals(ColourProperty.RANDOM)) {
+            level.setBlockAndUpdate(pos, state.setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.getRandomColour()));
+        }
     }
 }

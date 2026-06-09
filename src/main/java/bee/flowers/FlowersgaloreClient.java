@@ -12,6 +12,7 @@ import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.color.item.ItemTintSources;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
@@ -26,18 +27,14 @@ public class FlowersgaloreClient implements ClientModInitializer {
 
 
 
-        BlockColorRegistry.register(List.of(new BlockTintSource() {
-                                                @Override
-                                                public int color(BlockState state) {
-                                                    ColourProperty colourProperty = state.getValue(FlowersGaloreBlockProperties.COLOUR);
-                                                    return colourProperty.getColour();
-                                                }
-
-                                            }
-        ), FlowersGaloreBlocks.ROSE_BUSH, FlowersGaloreBlocks.SUNFLOWER, FlowersGaloreBlocks.PEONY, FlowersGaloreBlocks.TULIP, FlowersGaloreBlocks.ALLIUM, FlowersGaloreBlocks.DANDELION, FlowersGaloreBlocks.POPPY,
-                FlowersGaloreBlocks.ORCHID, FlowersGaloreBlocks.AZURE_BLUET, FlowersGaloreBlocks.OXEYE_DAISY, FlowersGaloreBlocks.CORNFlOWER, FlowersGaloreBlocks.LILY_OF_THE_VALLEY, FlowersGaloreBlocks.LILAC, FlowersGaloreBlocks.SUNFLOWER_HEAD,
-                FlowersGaloreBlocks.POTTED_TULIP, FlowersGaloreBlocks.POTTED_ALLIUM, FlowersGaloreBlocks.POTTED_DANDELION, FlowersGaloreBlocks.POTTED_POPPY, FlowersGaloreBlocks.POTTED_LILY_OF_THE_VALLEY,
-                FlowersGaloreBlocks.POTTED_ORCHID, FlowersGaloreBlocks.POTTED_AZURE_BLUET, FlowersGaloreBlocks.POTTED_OXEYE_DAISY, FlowersGaloreBlocks.POTTED_CORNFlOWER);
+        BlockColorRegistry.register(List.of(state -> {
+            ColourProperty colourProperty = state.getValue(FlowersGaloreBlockProperties.COLOUR);
+            return colourProperty.getColour();
+        }
+                ), Blocks.ROSE_BUSH, Blocks.SUNFLOWER, Blocks.PEONY, FlowersGaloreBlocks.TULIP, Blocks.ALLIUM, Blocks.DANDELION, Blocks.POPPY,
+                Blocks.BLUE_ORCHID, Blocks.AZURE_BLUET, Blocks.OXEYE_DAISY, Blocks.CORNFLOWER, Blocks.LILY_OF_THE_VALLEY, Blocks.LILAC, FlowersGaloreBlocks.SUNFLOWER_HEAD,
+                FlowersGaloreBlocks.POTTED_TULIP, Blocks.POTTED_ALLIUM, Blocks.POTTED_DANDELION, Blocks.POTTED_POPPY, Blocks.POTTED_LILY_OF_THE_VALLEY,
+                Blocks.POTTED_BLUE_ORCHID, Blocks.POTTED_AZURE_BLUET, Blocks.POTTED_OXEYE_DAISY, Blocks.POTTED_CORNFLOWER);
 
     }
 }

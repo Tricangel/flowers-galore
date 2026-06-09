@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "b b",
+    "bbb"
+  ],
+  "key": {
+    "b": "minecraft:brick"
+  },
+  "result": {
+    "id": "flowers-galore:vase"
+  }
+}

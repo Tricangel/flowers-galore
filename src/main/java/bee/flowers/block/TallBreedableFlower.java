@@ -4,6 +4,7 @@ import bee.flowers.block.property.ColourProperty;
 import bee.flowers.block.property.ShapeProperty;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreItemComponents;
+import bee.flowers.util.FlowerMutationHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -27,6 +28,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jspecify.annotations.Nullable;
@@ -45,7 +47,7 @@ public class TallBreedableFlower extends TallFlowerBlock {
     @Override
     protected ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
         ItemStack stack = this.asItem().getDefaultInstance();
-        Component name = this.getName(state);
+        Component name = FlowerMutationHelper.getName(state);
         stack.set(DataComponents.ITEM_NAME, name);
         stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
         stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
@@ -78,9 +80,10 @@ public class TallBreedableFlower extends TallFlowerBlock {
 
     @Override
     protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+        if (state.getValue(FlowersGaloreBlockProperties.COLOUR).equals(ColourProperty.RANDOM)) state = state.setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.getRandomColour());
         if (state.getValue(HALF).equals(DoubleBlockHalf.LOWER)) {
             ItemStack stack = this.asItem().getDefaultInstance();
-            Component name = this.getName(state);
+            Component name = FlowerMutationHelper.getName(state);
             stack.set(DataComponents.ITEM_NAME, name);
             stack.set(FlowersGaloreItemComponents.FLOWER_COLOUR, state.getValue(FlowersGaloreBlockProperties.COLOUR).getColour());
             stack.set(FlowersGaloreItemComponents.FLOWER_SHAPE, state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getSerializedName());
@@ -110,14 +113,15 @@ public class TallBreedableFlower extends TallFlowerBlock {
         return true;
     }
 
-    public Component getName(BlockState state) {
-        Component itemName = this.getName();
-        Component colour = state.getValue(FlowersGaloreBlockProperties.COLOUR).getDisplayName();
-        if (state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) != ShapeProperty.DEFAULT){
-            Component shape = state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getDisplayName();
-            return Component.literal(shape.getString() + " " + colour.getString() + " " + itemName.getString());
+
+
+    @Override
+    protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable Orientation orientation, boolean movedByPiston) {
+        super.neighborChanged(state, level, pos, block, orientation, movedByPiston);
+        if (state.getValue(FlowersGaloreBlockProperties.COLOUR).equals(ColourProperty.RANDOM)) {
+            level.setBlockAndUpdate(pos, state.setValue(FlowersGaloreBlockProperties.COLOUR, ColourProperty.getRandomColour()));
         }
-        return Component.literal(colour.getString() + " " + itemName.getString());
     }
+
 
 }

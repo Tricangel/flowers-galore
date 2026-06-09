@@ -4,6 +4,7 @@ import bee.flowers.block.property.ColourProperty;
 import bee.flowers.block.property.ShapeProperty;
 import bee.flowers.registry.FlowersGaloreBlockProperties;
 import bee.flowers.registry.FlowersGaloreBlocks;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
@@ -79,6 +80,17 @@ public class FlowerMutationHelper {
 
         return new Random().nextBoolean() ? colour : colour1;
 
+    }
+
+    public static Component getName(BlockState state) {
+        String itemName = state.getBlock().getName().getString();
+        Component colour = state.getValue(FlowersGaloreBlockProperties.COLOUR).getDisplayName();
+        itemName = itemName.replace("Blue ", "");
+        if (state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE) != ShapeProperty.DEFAULT){
+            Component shape = state.getValue(FlowersGaloreBlockProperties.FLOWER_SHAPE).getDisplayName();
+            return Component.literal(shape.getString() + " " + colour.getString() + " " + itemName);
+        }
+        return Component.literal(colour.getString() + " " + itemName);
     }
 
 }
