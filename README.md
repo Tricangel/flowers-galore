@@ -1,4 +1,3 @@
-_Is not survival friendly as of now!_
 Adds animal crossing type flower breeding.
 
 Flowers now have a property for colour
