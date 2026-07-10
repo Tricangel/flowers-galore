@@ -2,12 +2,16 @@ package bee.flowers;
 
 import bee.flowers.block.TallBreedableFlower;
 import bee.flowers.block.property.ShapeProperty;
+import bee.flowers.item.DyeRecipe;
 import bee.flowers.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
@@ -35,6 +39,9 @@ public class Flowersgalore implements ModInitializer {
         FlowersGaloreItems.init();
         FlowersGaloreItemComponents.init();
         FlowersGaloreBlockEntities.init();
+
+        Registry.register(BuiltInRegistries.RECIPE_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "dye_crafting"), DyeRecipe.DyeRecipeType.INSTANCE);
+        Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, Identifier.fromNamespaceAndPath(MOD_ID, "dye_crafting"), DyeRecipe.SERIALIZER);
 
         //Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, FlowersGaloreItemGroup.FLOWERSGALORE_CREATIVE_TAB_KEY, FlowersGaloreItemGroup.FLOWERSGALORE_ITEMS);
 
