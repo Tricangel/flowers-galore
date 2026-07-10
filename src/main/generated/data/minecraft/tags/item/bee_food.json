@@ -2,18 +2,6 @@
   "values": [
     "flowers-galore:rose_cutting",
     "flowers-galore:sunflower_head",
-    "flowers-galore:allium",
-    "flowers-galore:tulip",
-    "flowers-galore:dandelion",
-    "flowers-galore:poppy",
-    "flowers-galore:orchid",
-    "flowers-galore:azure_bluet",
-    "flowers-galore:oxeye_daisy",
-    "flowers-galore:cornflower",
-    "flowers-galore:lily_of_the_valley",
-    "flowers-galore:sunflower",
-    "flowers-galore:peony",
-    "flowers-galore:lilac",
-    "flowers-galore:rose_bush"
+    "flowers-galore:tulip"
   ]
 }
