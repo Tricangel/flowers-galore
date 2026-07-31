@@ -4,6 +4,8 @@ import bee.flowers.Flowersgalore;
 import bee.flowers.block.BreedableFlower;
 import bee.flowers.block.PottedFlowersGaloreFlower;
 import bee.flowers.block.TallBreedableFlower;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.component.SuspiciousStewEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -73,13 +75,6 @@ public class BlocksMixin {
             case "potted_allium" -> instance -> new PottedFlowersGaloreFlower(ALLIUM, instance);
             default -> value;
         };
-    }
-
-    @Inject(method = "register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;", at = @At(value = "HEAD"), cancellable = true)
-    private static void wawa(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties, CallbackInfoReturnable<Block> cir) {
-        if (id.contains("tulip") && !id.contains("red")) {
-
-        }
     }
 
 }

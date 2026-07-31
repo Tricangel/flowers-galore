@@ -100,11 +100,11 @@ public class FertilizerItem extends Item {
         BlockPos mutatedPos = pos1.get();
 
         if (mutatedState.getBlock() instanceof TallBreedableFlower) {
-            level.setBlockAndUpdate(mutatedPos.above(), mutatedState.setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER));
+            if (!level.isClientSide()) level.setBlockAndUpdate(mutatedPos.above(), mutatedState.setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER));
             BoneMealItem.addGrowthParticles(level, mutatedPos.above(), 20);
         }
 
-        level.setBlockAndUpdate(mutatedPos, mutatedState);
+        if (!level.isClientSide()) level.setBlockAndUpdate(mutatedPos, mutatedState);
         BoneMealItem.addGrowthParticles(level, mutatedPos, 20);
 
         return true;
